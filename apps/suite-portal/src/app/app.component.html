@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
   <mat-label>Resident Portal</mat-label>
-  <a mat-button [routerLink]="'home'">Home</a>
+  <a class="home" mat-button [routerLink]="['/home']" routerLinkActive="active-link">Home</a>
   <div class="spacer"></div>
-  <a class="admin" mat-button [routerLink]="'admin'">Admin</a>
+  <a class="admin" mat-button [routerLink]="['/admin']" routerLinkActive="active-link">Admin</a>
 </mat-toolbar>
 
 <main>

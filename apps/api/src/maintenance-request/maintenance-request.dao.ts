@@ -6,7 +6,8 @@ import * as nanoid from 'nanoid';
 
 export interface MaintenanceRequestDB extends MaintenanceRequest {
   id: string;
-  submittedAt: Date;
+  submittedAt: String;
+  status: 'open' | 'closed';
 }
 
 export interface MaintenanceRequestData {
@@ -30,18 +31,37 @@ export class MaintenanceRequestDao {
   }
 
   async insertNewRequest(maintenanceRequest: MaintenanceRequest) {
-    const id = { id: nanoid.nanoid(10) };
+    const id = nanoid.nanoid(10);
     await this.collection
       .push({
-        ...id,
+        id,
         ...maintenanceRequest,
-        submittedAt: new Date(),
+        submittedAt: new Date().toString(),
+        status: 'open',
       })
       .write()
     return id;
-  }
+}
 
   async getMaintenanceRequest(id: string): Promise<MaintenanceRequestDB> {
     return await this.collection.find({ id }).value();
+  }
+
+  async getOpenMaintenanceRequests(): Promise<MaintenanceRequestDB[]> {
+    return await this.collection.filter({ status: 'open' }).value();
+  }
+
+  async closeMaintenanceRequest(id: string): Promise<MaintenanceRequestDB> {
+    const request = await this.collection.find({ id }).value();
+    if (!request) { // throw exception or return null
+      return null;
+    }
+    if (request.status === 'closed') { //throw execption or return request
+      console.log("Request already closed");
+      return request;
+    }
+    request.status = 'closed';
+    await this.collection.find({ id }).assign(request).write();
+    return request;
   }
 }

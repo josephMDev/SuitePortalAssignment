@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Post, Get, Param } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Post, Get, Put, Param } from '@nestjs/common';
 import { MaintenanceRequest } from '@suiteportal/api-interfaces';
 import { MaintenanceRequestService } from './maintenance-request.service';
 
@@ -32,6 +32,22 @@ export class MaintenanceRequestController {
       throw new BadRequestException('No id provided');
     }
     return await this.maintenanceRequestService.getMaintenanceRequest(id);
+  }
+
+  //admin routes should only be allowed for admin users once they are logged in
+  @Get('/')
+  public async getOpenMaintenanceRequests() {
+    return await this.maintenanceRequestService.getOpenMaintenanceRequests();
+  }
+
+  @Put('/:id/close')
+  public async closeMaintenanceRequest(
+    @Param('id') id: string,
+  ) {
+    if (!id) {
+      throw new BadRequestException('No id provided');
+    }
+    return await this.maintenanceRequestService.closeMaintenanceRequest(id);
   }
 
 }

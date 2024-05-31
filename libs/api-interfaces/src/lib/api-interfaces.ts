@@ -27,3 +27,10 @@ export interface MaintenanceRequest {
   details?: string;
 }
 
+export interface Admin {
+  //unique username of the admin user 
+  username: string;
+  //password of the admin user
+  password: string;
+}
+
