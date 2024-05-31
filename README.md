@@ -1,3 +1,9 @@
+# Admin Credentials:
+
+username: admin1
+password: password
+
+
 # SuitePortal
 
 This repository is intended to be a starter project for your assignment.
