@@ -5,8 +5,7 @@ import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
 import { LoginModule } from './login/login.module';
 import { AdminComponent } from './admin/admin.component';
-import { AuthGuard } from './auth/auth.guard';  
-import { ProgressSpinner } from './login/spinner.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {

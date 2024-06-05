@@ -9,7 +9,7 @@
       "summary": "my kitchen is full of bugs",
       "details": "bugs in the fridge, bugs in the oven",
       "submittedAt": "Thu May 30 2024 22:27:35 GMT-0400 (Eastern Daylight Time)",
-      "status": "open"
+      "status": "closed"
     },
     {
       "id": "jafD0ZBCg7",
@@ -20,7 +20,7 @@
       "summary": "bugs everywhere",
       "details": "bugs in the kitchen",
       "submittedAt": "Thu May 30 2024 22:32:34 GMT-0400 (Eastern Daylight Time)",
-      "status": "open"
+      "status": "closed"
     },
     {
       "id": "uImgRLP8yN",
@@ -108,7 +108,7 @@
       "summary": "werwer",
       "details": "werwerw",
       "submittedAt": "Thu May 30 2024 23:49:55 GMT-0400 (Eastern Daylight Time)",
-      "status": "open"
+      "status": "closed"
     },
     {
       "id": "ICzw72PFd7",
@@ -141,6 +141,17 @@
       "summary": "sacac",
       "details": "ascasc",
       "submittedAt": "Fri May 31 2024 10:42:13 GMT-0400 (Eastern Daylight Time)",
+      "status": "open"
+    },
+    {
+      "id": "HF6sKWD2Sm",
+      "name": "Joseph M",
+      "email": "jos.moraru@gmail.com",
+      "unitNumber": "456",
+      "serviceType": "general",
+      "summary": "bbjbskjdbckcb",
+      "details": "sdcscsdc",
+      "submittedAt": "Wed Jun 05 2024 10:35:41 GMT-0400 (Eastern Daylight Time)",
       "status": "open"
     }
   ]
